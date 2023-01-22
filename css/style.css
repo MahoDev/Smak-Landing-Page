@@ -72,18 +72,20 @@ the screen by 40px */
 
 /* Header start */
 .header {
-    position: relative;
+    position: absolute;
     background-color: rgba(0, 0, 0, 0.30);
     /* padding: 20px 0; */
     height: 90px;
-    position: relative;
+    width: 100%;
     display: flex;
     align-items: center;
+    /* z-index: 1; */
 }
 
 .container {
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
 .header .logo {
@@ -101,6 +103,7 @@ the screen by 40px */
     font-size: 2.5rem;
     color: var(--primary-text-color);
     cursor: pointer;
+    z-index: 5;
 }
 
 @media(max-width:991px) {
@@ -115,19 +118,21 @@ the screen by 40px */
     display: flex;
     align-items: center;
     transition: top var(--transition-duration);
-    z-index: 1;
+    z-index: 5;
 }
 
 @media(max-width:991px) {
     .header .links {
         position: absolute;
         flex-direction: column;
-        right: 0;
+        right: 0px;
         top: 95px;
         background-color: rgba(0, 0, 0, 0.30);
         opacity: 0;
         height: 100vh;
-        padding: 0px 20px
+        padding: 0px 20px;
+        z-index: 5;
+
     }
 
     .header .container i:hover+.links {
@@ -153,7 +158,7 @@ the screen by 40px */
 
 @media (max-width:991px) {
     .header .links li {
-        padding: 25px 0px 0px 0px;
+        padding: 25px 0px 25px 0px;
         margin-left: 0px;
         align-self: flex-start;
     }
@@ -193,7 +198,8 @@ the screen by 40px */
     content: "";
     position: absolute;
     top: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 0px;
     height: 0px;
     background-color: var(--primary-color);
@@ -212,5 +218,114 @@ the screen by 40px */
 /* Header end */
 
 /* Landing start */
+.landing {
+    background-image: url("../imgs/bgs/bridge.jpg");
+    background-size: cover;
+    background-position: top right;
+    height: 100vh;
+}
+
+.landing .landing-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.landing .landing-content .bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+    background-color: rgba(0, 0, 0, 0.50);
+    height: fit-content;
+    width: 100%;
+}
+
+.landing .landing-content .bar h1 {
+    font-size: 5rem;
+    font-weight: bold;
+    margin: 0;
+    color: var(--primary-text-color);
+    width: 650px;
+    text-align: center;
+    letter-spacing: -2px;
+    line-height: 1.2;
+}
+
+@media(max-width:767px) {
+    .landing .landing-content .bar h1 {
+        font-size: 3rem;
+        width: 370px;
+    }
+}
+
+.landing .landing-content .bar .btn {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--secondary-text-color);
+    padding: 15px 30px;
+    margin-top: 20px;
+    /* letter-spacing: -1px; */
+    cursor: pointer;
+    transition: var(--transition-duration);
+    position: relative;
+    z-index: 0;
+}
+
+.landing .landing-content .bar .btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--secondary-color);
+    z-index: -1;
+    transition: var(--transition-duration);
+}
+
+.landing .landing-content .bar .btn:hover::before {
+    width: 100%;
+}
+
+.landing .landing-content .bar .btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    z-index: -2;
+}
+
+.landing .landing-content .down-arrow {
+    background-color: var(--primary-color);
+    color: var(--primary-text-color);
+    padding: 10px 15px;
+    font-size: 3rem;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.landing .landing-content .down-arrow i {
+    position: relative;
+    animation: up-and-down 0.5s linear infinite;
+}
 
 /* Landing end */
+
+/* Animations start */
+@keyframes up-and-down {
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+/* Animations end */
