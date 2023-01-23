@@ -459,15 +459,25 @@ the screen by 40px */
 
 /* Process start */
 .process {
-    background-image: url("../imgs/bgs/abstract.jpg");
-    background-size: cover;
     min-height: 400px;
     padding: 70px 0px;
     position: relative;
-    z-index: -2;
+    z-index: 0;
 }
 
 .process::before {
+    content: "";
+    position: absolute;
+    background-image: url("../imgs/bgs/abstract.jpg");
+    background-size: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.process::after {
     content: "";
     position: absolute;
     background-color: rgba(0, 0, 0, 0.50);
@@ -476,13 +486,6 @@ the screen by 40px */
     width: 100%;
     height: 100%;
     z-index: -1;
-}
-
-
-.process .container {
-    /* display: flex;
-    flex-direction: column; */
-
 }
 
 .process .details {
@@ -691,8 +694,130 @@ the screen by 40px */
 .work .enquiry .default-btn::before {
     background-color: black;
 }
-/* Work end */
 
+/* Work end */
+/* Numbers start */
+.numbers {
+    padding: 60px 0;
+    z-index: 0;
+    position: relative;
+}
+
+.numbers::before {
+    content: "";
+    position: absolute;
+    background-image: url("../imgs/bgs/car.jpeg");
+    background-size: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+}
+
+.numbers::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.50);
+    z-index: -2;
+}
+
+
+.numbers .details {
+    text-align: center;
+}
+
+.numbers .details h2 {
+    color: var(--primary-text-color);
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.numbers .details p {
+    color: var(--third-text-color);
+    font-size: 1.7rem;
+    margin-bottom: 40px;
+}
+
+.numbers .num-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    z-index: 1;
+}
+
+.numbers .num-cards .card {
+    text-align: center;
+    padding: 20px 50px;
+    border: 2px solid var(--primary-color);
+    position: relative;
+    cursor: pointer;
+    transition: var(--transition-duration);
+}
+
+
+
+.numbers .num-cards .card::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background-color: var(--secondary-color);
+    transition: var(--transition-duration);
+    z-index: -1;
+}
+
+.numbers .num-cards .card:hover::before {
+    width: 100%;
+}
+
+.numbers .num-cards .card::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background-color: var(--secondary-color);
+    transition: var(--transition-duration);
+    z-index: -1;
+
+}
+
+.numbers .num-cards .card:hover::after {
+    width: 100%;
+}
+
+.numbers .num-cards .card p:first-child {
+    font-size: 5rem;
+    font-weight: bold;
+    color: var(--primary-text-color);
+    margin-bottom: 5px;
+    transition: var(--transition-duration);
+}
+
+.numbers .num-cards .card:hover p:first-child {
+    color: var(--primary-color);
+}
+
+.numbers .num-cards .card p:last-child {
+    font-size: 3rem;
+    color: var(--primary-color);
+    transition: var(--transition-duration);
+
+}
+
+.numbers .num-cards .card:hover p:last-child {
+    color: var(--secondary-text-color);
+}
+
+/* Numbers end */
 
 /* Animations start */
 @keyframes up-and-down {
