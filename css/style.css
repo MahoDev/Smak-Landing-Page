@@ -48,6 +48,7 @@ a {
 
 /* Components start */
 
+/* Section start styling start */
 .section-start {
     font-size: 4rem;
     font-weight: bold;
@@ -85,6 +86,72 @@ a {
     height: 2px;
     background-color: var(--primary-color);
 }
+
+/* Section start styling end */
+
+
+/* default button styling start */
+.default-btn {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--secondary-text-color);
+    padding: 15px 30px;
+    margin-top: 20px;
+    /* letter-spacing: -1px; */
+    cursor: pointer;
+    transition: var(--transition-duration);
+    position: relative;
+    z-index: 0;
+}
+
+.default-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--secondary-color);
+    z-index: -1;
+    transition: var(--transition-duration);
+}
+
+.default-btn:hover::before {
+    width: 100%;
+}
+
+.default-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    z-index: -2;
+}
+
+/* default button styling end*/
+/* Down arrow start */
+.down-arrow {
+    background-color: var(--primary-color);
+    color: var(--primary-text-color);
+    padding: 10px 15px;
+    font-size: 3.5rem;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    height: fit-content;
+}
+
+.down-arrow i {
+    position: relative;
+    animation: up-and-down 0.5s linear infinite;
+}
+
+/* Down arrow end */
+
 
 /* Components end */
 
@@ -194,17 +261,13 @@ the screen by 40px */
 
 .header .links li {
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     color: var(--primary-text-color);
     position: relative;
     padding: 20px 0px;
-    margin: 0;
+    margin: 0px 40px;
 }
 
-.header .links li {
-    margin-right: 40px;
-    margin-left: 40px;
-}
 
 @media (max-width:991px) {
     .header .links li {
@@ -313,61 +376,10 @@ the screen by 40px */
     }
 }
 
-.landing .landing-content .bar .btn {
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--secondary-text-color);
-    padding: 15px 30px;
-    margin-top: 20px;
-    /* letter-spacing: -1px; */
-    cursor: pointer;
-    transition: var(--transition-duration);
-    position: relative;
-    z-index: 0;
-}
-
-.landing .landing-content .bar .btn::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background-color: var(--secondary-color);
-    z-index: -1;
-    transition: var(--transition-duration);
-}
-
-.landing .landing-content .bar .btn:hover::before {
-    width: 100%;
-}
-
-.landing .landing-content .bar .btn::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--primary-color);
-    z-index: -2;
-}
-
 .landing .landing-content .down-arrow {
-    background-color: var(--primary-color);
-    color: var(--primary-text-color);
-    padding: 10px 15px;
-    font-size: 3.5rem;
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
-.landing .landing-content .down-arrow i {
-    position: relative;
-    animation: up-and-down 0.5s linear infinite;
-}
 
 /* Landing end */
 
@@ -493,8 +505,9 @@ the screen by 40px */
 
 .process .process-steps {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     justify-content: center;
+    align-items: center;
     gap: 30px;
 }
 
@@ -521,6 +534,164 @@ the screen by 40px */
 }
 
 /* Process end */
+/* Work start */
+.work {
+    background-color: var(--secondary-color);
+    padding: 80px 0 60px 0;
+    text-align: center;
+}
+
+.work .section-start::before {
+    content: "OUR WORKS";
+}
+
+.work .details {
+    font-size: 1.7rem;
+    line-height: 1.4;
+    color: var(--third-text-color);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.work .details p {
+    text-align: center;
+    width: 850px;
+}
+
+.work .categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.work .categories li {
+    font-weight: 400;
+    font-size: 1.7rem;
+    color: var(--secondary-text-color);
+    position: relative;
+    padding: 5px 0px;
+    margin: 0px 40px;
+    transition: var(--transition-duration);
+    cursor: pointer;
+}
+
+.work .categories li:hover {
+    color: var(--primary-color);
+}
+
+.work .categories li+li::before {
+    content: "";
+    position: absolute;
+    background-color: var(--primary-color);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    left: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.work .categories li:first-child {
+    color: var(--primary-color);
+}
+
+.work .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+
+.work .gallery .image {
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+    max-width: 100%;
+    max-height: calc(100%);
+}
+
+.work .gallery .image img {
+    max-width: 100%;
+
+}
+
+.work .gallery .image::before {
+    content: "";
+    background-color: var(--primary-color);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 0px;
+    height: 0px;
+    opacity: 0.9;
+    z-index: 1;
+    transition: width, height, var(--transition-duration);
+}
+
+.work .gallery .image::after {
+    content: "SAMPLE IMAGE\ category";
+    line-height: 1.7;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-text-color);
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    opacity: 0;
+    transition: var(--transition-duration) (--transition-duration);
+}
+
+.work .gallery .image:hover::before {
+    width: calc(100% + 1px);
+    height: calc(100% + 1px);
+}
+
+.work .gallery .image:hover::after {
+    opacity: 1;
+}
+
+.work .enquiry {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.work .enquiry a {
+    display: block;
+}
+
+.work .enquiry .down-arrow {
+    margin-right: -60px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.work .enquiry h2 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.work .enquiry p {
+    font-size: 1.7rem;
+    color: var(--third-text-color);
+    margin-bottom: 30px;
+}
+
+.work .enquiry .default-btn:hover {
+    color: var(--primary-color)
+}
+
+.work .enquiry .default-btn::before {
+    background-color: black;
+}
+/* Work end */
 
 
 /* Animations start */
