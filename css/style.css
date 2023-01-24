@@ -67,7 +67,7 @@ a {
 
 .section-start::before {
     position: absolute;
-    content: "OUR SERVICES";
+    content: "";
     top: -40px;
     left: 50%;
     transform: translateX(-50%);
@@ -167,19 +167,19 @@ a {
 the screen by 40px */
 @media (min-width:768px) {
     .container {
-        width: 728px;
+        width: 748px;
     }
 }
 
 @media (min-width:992px) {
     .container {
-        width: 952px;
+        width: 972px;
     }
 }
 
 @media (min-width:1200px) {
     .container {
-        width: 1160px;
+        width: 1180px;
     }
 }
 
@@ -387,6 +387,10 @@ the screen by 40px */
 .services {
     padding: 100px 0px 70px 0px;
     background-color: var(--secondary-color);
+}
+
+.services .section-start::before {
+    content: "OUR SERVICES";
 }
 
 .services .container {
@@ -745,21 +749,19 @@ the screen by 40px */
 
 .numbers .num-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 25px;
     z-index: 1;
 }
 
 .numbers .num-cards .card {
     text-align: center;
-    padding: 20px 50px;
+    padding: 25px 0px;
     border: 2px solid var(--primary-color);
     position: relative;
     cursor: pointer;
     transition: var(--transition-duration);
 }
-
-
 
 .numbers .num-cards .card::before {
     content: "";
@@ -818,6 +820,77 @@ the screen by 40px */
 }
 
 /* Numbers end */
+/* About start */
+.about {
+    background-color: var(--secondary-color);
+    padding: 80px 0 60px 0;
+}
+
+.about .section-start::before {
+    content: "ABOUT US";
+}
+
+.about .container>.details {
+    font-size: 1.7rem;
+    color: var(--third-text-color);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.about .about-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+
+}
+
+.about .about-cards .card {
+    display: flex;
+    gap: 20px;
+    flex-basis: calc(50% - 20px);
+}
+
+@media(max-width:767px) {
+    .about .about-cards .card {
+        flex-basis: calc(100%);
+    }
+}
+
+.about .about-cards .card .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+}
+
+.about .about-cards .card .icon i {
+    font-size: 2.5rem;
+    color: var(--primary-text-color);
+}
+
+.about .about-cards .card .details {
+    flex: 1;
+}
+
+.about .about-cards .card .details h3 {
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--secondary-text-color);
+    text-align: start;
+    margin-bottom: 10px;
+}
+
+.about .about-cards .card .details p {
+    font-size: 1.7rem;
+    color: var(--third-text-color);
+    text-align: start;
+}
+
+/* About end */
 
 /* Animations start */
 @keyframes up-and-down {
