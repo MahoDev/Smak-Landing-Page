@@ -134,7 +134,7 @@ a {
 
 /* default button styling end*/
 /* Down arrow start */
-.down-arrow {
+.arrow {
     background-color: var(--primary-color);
     color: var(--primary-text-color);
     padding: 10px 15px;
@@ -146,7 +146,7 @@ a {
     height: fit-content;
 }
 
-.down-arrow i {
+.arrow i {
     position: relative;
     animation: up-and-down 0.5s linear infinite;
 }
@@ -377,7 +377,7 @@ the screen by 40px */
     }
 }
 
-.landing .landing-content .down-arrow {
+.landing .landing-content .arrow {
     position: absolute;
 }
 
@@ -674,7 +674,7 @@ the screen by 40px */
     display: block;
 }
 
-.work .enquiry .down-arrow {
+.work .enquiry .arrow {
     margin-right: -60px;
     margin-top: 10px;
     margin-bottom: 20px;
@@ -1300,7 +1300,7 @@ the screen by 40px */
 }
 
 .message .input-fields input:focus,
-.message .input-fields textarea {
+.message .input-fields textarea:focus {
     border: 2px solid var(--primary-color);
 }
 
@@ -1325,8 +1325,73 @@ the screen by 40px */
 .message .default-btn {
     margin: 0 auto;
 }
-/* Message end */
 
+/* Message end */
+/* Footer start */
+.footer {
+    background-color: black;
+    padding-top: 15px;
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    color: var(--secondary-color);
+    font-size: 1.7rem;
+    text-align: center;
+}
+
+.footer span {
+    color: var(--primary-color);
+}
+
+.footer .arrow {
+    transform: rotateY(180deg);
+}
+
+.footer .social-media {
+    display: flex;
+    gap: 20px;
+}
+
+.footer .social-media .link {
+    position: relative;
+    z-index: 3;
+    padding: 8px;
+}
+
+.footer .social-media .link::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: transparent;
+    transition: var(--transition-duration);
+}
+
+.footer .social-media .link:hover::before {
+    background-color: var(--primary-color);
+}
+
+.footer .social-media .link i {
+    color: var(--primary-text-color);
+    transition: var(--transition-duration);
+}
+
+.footer .social-media .link:hover i {
+    color: black;
+}
+
+.footer .arrow {
+    margin-bottom: -10px;
+}
+
+/* Footer end */
 
 /* Animations start */
 @keyframes up-and-down {
