@@ -97,6 +97,7 @@ a {
     color: var(--secondary-text-color);
     padding: 15px 30px;
     margin-top: 20px;
+    width: fit-content;
     /* letter-spacing: -1px; */
     cursor: pointer;
     transition: var(--transition-duration);
@@ -502,7 +503,7 @@ the screen by 40px */
     font-size: 4rem;
     font-weight: bold;
     color: var(--primary-color);
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .process .details p {
@@ -995,7 +996,7 @@ the screen by 40px */
     font-size: 4rem;
     font-weight: bold;
     color: var(--primary-text-color);
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .skills .details p {
@@ -1227,7 +1228,105 @@ the screen by 40px */
     font-size: 1.7rem;
     color: var(--third-text-color);
 }
+
 /* Contact end */
+/* Message start */
+.message {
+    position: relative;
+    padding: 60px 0;
+    z-index: 0;
+}
+
+.message::before {
+    content: "";
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.70);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+}
+
+.message::after {
+    content: "";
+    position: absolute;
+    background-image: url("../imgs/bgs/Between-buildings.jpg");
+    background-size: cover;
+    background-position: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -4;
+}
+
+.message .details {
+    text-align: center;
+}
+
+.message .details h2 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: var(--primary-text-color);
+    margin-bottom: 20px;
+}
+
+.message .details p {
+    font-size: 1.7rem;
+    color: var(--third-text-color);
+    margin-bottom: 40px;
+}
+
+.message .input-fields {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.message .input-fields input,
+.message .input-fields textarea {
+    border: 2px solid var(--secondary-color);
+    border-radius: 4px;
+    font-size: 1.7rem;
+    color: var(--primary-text-color);
+    outline: none;
+    padding: 10px;
+    background-color: transparent;
+    caret-color: var(--primary-color);
+    overflow: hidden;
+}
+
+.message .input-fields input:focus,
+.message .input-fields textarea {
+    border: 2px solid var(--primary-color);
+}
+
+.message .input-fields input::placeholder,
+.message .input-fields textarea::placeholder {
+    position: absolute;
+    top: 10px;
+    color: white;
+    font-size: 1.7rem;
+}
+
+.message .input-fields input {
+    flex: 1;
+}
+
+.message .input-fields textarea {
+    flex-basis: 100%;
+    height: 220px;
+    resize: none;
+}
+
+.message .default-btn {
+    margin: 0 auto;
+}
+/* Message end */
+
 
 /* Animations start */
 @keyframes up-and-down {
