@@ -1093,7 +1093,88 @@ the screen by 40px */
     color: var(--primary-text-color);
     cursor: pointer;
 }
+
 /* Clients end */
+/* Quotes start */
+.quotes {
+    position: relative;
+    padding: 50px 0;
+    z-index: 0;
+
+}
+
+.quotes::before {
+    content: "";
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.70);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+}
+
+.quotes::after {
+    content: "";
+    position: absolute;
+    background-image: url("../imgs/bgs/bridge.jpg");
+    background-size: cover;
+    background-position: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -4;
+}
+
+.quotes .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quotes .container p:first-child {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary-text-color);
+    /* text-align: center; */
+    max-width: 500px;
+}
+
+.quotes p:nth-child(2) {
+    font-size: 1.7rem;
+    color: var(--primary-text-color);
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.quotes p:nth-child(2)::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1px;
+    width: 150px;
+    background-color: var(--primary-color);
+}
+
+.quotes .circles .circle {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    margin-right: 4px;
+    cursor: pointer;
+}
+
+.quotes .circles .circle:first-child {
+    background-color: var(--primary-color)
+}
+
+/* Quotes end */
 
 /* Animations start */
 @keyframes up-and-down {
