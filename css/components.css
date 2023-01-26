@@ -1,0 +1,134 @@
+/* Components start */
+
+/* Section start styling start */
+.section-start {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--secondary-text-color);
+    position: relative;
+    text-align: center;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+@media(max-width:767px) {
+    .section-start {
+        font-size: 2.5rem;
+    }
+}
+
+.section-start::before {
+    position: absolute;
+    content: "";
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #777;
+    font-size: 2rem;
+
+}
+
+.section-start::after {
+    position: absolute;
+    content: "";
+    bottom: -0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+/* Section start styling end */
+
+/* default button styling start */
+.default-btn {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--secondary-text-color);
+    padding: 15px 30px;
+    margin-top: 20px;
+    width: fit-content;
+    /* letter-spacing: -1px; */
+    cursor: pointer;
+    transition: var(--transition-duration);
+    position: relative;
+    z-index: 0;
+}
+
+.default-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--secondary-color);
+    z-index: -1;
+    transition: var(--transition-duration);
+}
+
+.default-btn:hover::before {
+    width: 100%;
+}
+
+.default-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    z-index: -2;
+}
+
+/* default button styling end*/
+/* Down arrow start */
+.arrow {
+    background-color: var(--primary-color);
+    color: var(--primary-text-color);
+    padding: 10px 15px;
+    font-size: 3.5rem;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    height: fit-content;
+}
+
+.arrow i {
+    position: relative;
+    animation: up-and-down 0.5s linear infinite;
+}
+
+/* Down arrow end */
+
+/* default mobile styling */
+.container {
+    width: 100%;
+    padding: 10px;
+    margin: 0px auto;
+}
+
+/* I decided to make the containers' widths lower than 
+the screen by 40px */
+@media (min-width:768px) {
+    .container {
+        width: 748px;
+    }
+}
+
+@media (min-width:992px) {
+    .container {
+        width: 972px;
+    }
+}
+
+@media (min-width:1200px) {
+    .container {
+        width: 1180px;
+    }
+}
+
+/* Components end */
